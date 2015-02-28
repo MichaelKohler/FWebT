@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>PVA 1 - Übung 2</title>
+  <meta name="description" content="Übung 2 der PVA1 - FWebT">
+  <meta name="author" content="Michael Kohler">
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td>th1</td>
+      <td>th2</td>
+    </tr>
+    <tr>
+      <td>1-1</td>
+      <td>1-2</td>
+    </tr>
+    <tr>
+      <td>2-1</td>
+      <td>2-2</td>
+    </tr>
+  </table>
+
+  <button onclick="toggle()">Toggle</button>
+
+  <script src="jquery.min.js"></script>
+  <script>
+    function toggle() {
+      var table = $('table');
+      var toggledRows = [];
+      table.find("tr").each(function() {
+          var counter = 0;
+          var row = $(this);
+          row.find("td").each(function() {
+              counter++;
+              var cell = $(this);
+              if(toggledRows[counter] === undefined) {
+                toggledRows[counter] = $("<tr></tr>");
+              }
+              toggledRows[counter].append(cell);
+          });
+      });
+
+      // Tabelle neu aufbauen
+      table.find("tr").remove();
+      $.each(toggledRows, function(){
+          table.append(this);
+      });
+    }
+  </script>
+</body>
+</html>

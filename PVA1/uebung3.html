@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>PVA 1 - Übung 3</title>
+  <meta name="description" content="Übung 3 der PVA1 - FWebT">
+  <meta name="author" content="Michael Kohler">
+</head>
+
+<body>
+  <p id="content"></p>
+  <button onclick="moreText()">More text</button>
+
+  <script src="jquery.min.js"></script>
+  <script>
+    var counter = 1;
+    function moreText() {
+      var contentContainer = $('#content');
+      var url = 'http://hipsterjesus.com/api/?paras=' + counter;
+      $.getJSON(url, function(data) {
+        contentContainer.html(data.text);
+      });
+    }
+  </script>
+</body>
+</html>
