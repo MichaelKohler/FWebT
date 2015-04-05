@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>PVA 2 - Übung 1</title>
+  <meta name="description" content="Übung 1 der PVA2 - FWebT">
+  <meta name="author" content="Michael Kohler">
+</head>
+
+<body>
+  <form action="/somewhere" method="POST">
+  	<input type="text" name="name" required placeholder="Name" />
+  	<input type="text" name="firstname" required placeholder="Vorname" />
+  	<input type="text" name="matrikelnr" required pattern="[0-9]{2}-[0-9]{3}-[0-9]{3}" placeholder="11-111-111" />
+  	<input type="email" name="email" placeholder="Email" />
+  	<input type="tel" name="phone" placeholder="Telefon" />
+  	<input type="text" name="course" placeholder="Kursname" />
+  	<input type="submit" name="submit" value="Senden" />
+  </form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>PVA 2 - Übung 2</title>
+  <meta name="description" content="Übung 2 der PVA2 - FWebT">
+  <meta name="author" content="Michael Kohler">
+
+  <style>
+    video {
+    	width: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Video</h1>
+
+  <video controls preload="auto" autoplay="true" loop="true">
+    <source src="https://videos.cdn.mozilla.net/uploads/FirefoxHello/firefoxhello_intro_german.webm" type="video/webm">
+    <source src="https://videos.cdn.mozilla.net/uploads/FirefoxHello/firefoxhello_intro_german.mp4" type="video/mp4">
+    Your browser does not support the <code>video</code> element.
+  </video>
+
+  <h2>Dokumentation Browser-Support</h2>
+  <p>Das Video Element wird in allen modernen Browser unterstützt:</p>
+  <img src="browser_video.png" alt="Tabelle mit Browserstatistik" />
+  <figure>Screenshot from CanIUse.com</figure>
+
+  <p>IE < 9 zähle ich hierbei absichtlich nicht als "modernen" Browser. Der einzige Unterschied zwischen den Browsern besteht in den abspielbaren Videoformaten. Daher ist es von Vorteil, verschiedene Formate anzugeben und den Browser entscheiden zu lassen, welches er abspielen will (so wie es oben gemacht wird). Weitere Informationen zu den verschiedenen Formaten finden Sie unter folgenden Links:</p>
+
+  <ul>
+    <li>WebM: <a href="http://caniuse.com/#feat=webm">CanIUse</a> - Firefox, Chrome</li>
+    <li>MPEG-4/H.264: <a href="http://caniuse.com/#feat=mpeg4">CanIUse</a> - alle modernen Browser</li>
+    <li>Ogg/Theora: <a href="http://caniuse.com/#feat=ogv">CanIUse</a> - Firefox, Chrome</li>
+  </ul>
+</body>
+</html>
