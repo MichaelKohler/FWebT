@@ -14,12 +14,12 @@
 
   <script src="jquery.min.js"></script>
   <script>
-    var counter = 1;
     function moreText() {
       var contentContainer = $('#content');
-      var url = 'http://hipsterjesus.com/api/?paras=' + counter;
+      var url = 'http://hipsterjesus.com/api/?paras=1';
       $.getJSON(url, function(data) {
-        contentContainer.html(data.text);
+        var newParagraph = $('<p>' + data.text + '</p>');
+        contentContainer.append(newParagraph);
       });
     }
   </script>
