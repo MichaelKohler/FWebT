@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>PVA 3 - Übung 2</title>
+  <meta name="description" content="Übung 2 der PVA3 - FWebT">
+  <meta name="author" content="Michael Kohler">
+
+  <style>
+    #box {
+      background-color: #000;
+      width: 0px;
+      height: 100px;
+      -webkit-animation: widthAnim 1s;
+      -moz-animation: widthAnim 1s;
+      animation: widthAnim 1s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes widthAnim {
+        0% { width: 0px; }
+        99% { background-color: #000; }
+        100% {
+          width: 300px;
+          background-color: green;
+        }
+    }
+
+    #box p {
+      color: #fff;
+      opacity: 0;
+      -webkit-animation: showTextAnim 1s;
+      -moz-animation: showTextAnim 1s;
+      animation: showTextAnim 1s;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes showTextAnim {
+      99% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <p>Das ist ein Text</p>
+  </div>
+</body>
+</html>
