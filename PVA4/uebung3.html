@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>PVA 4 - Übung 3</title>
+  <meta name="description" content="Übung 3 der PVA4 - FWebT">
+  <meta name="author" content="Michael Kohler">
+
+</head>
+
+<body>
+
+  <canvas id="drawing" width="300" height="200">
+    
+  </cavas>
+  
+  <script>
+  
+    (function () {
+      var drawingCanvas = document.getElementById('drawing');
+      var ctx = drawingCanvas.getContext('2d');
+      ctx.fillStyle = "#e3e3e3";
+      ctx.fillRect(0, 0, 300, 100);
+      ctx.fillStyle = "#000";
+      ctx.fillRect(10, 10, 140, 80);
+      ctx.fillRect(160, 15, 130, 70);
+      ctx.fillStyle = "#fff";
+      ctx.fillRect(20, 20, 120, 60);
+    })();
+    
+  </script>
+
+</body>
+</html>

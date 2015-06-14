@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>PVA 4 - Übung 2</title>
+  <meta name="description" content="Übung 2 der PVA4 - FWebT">
+  <meta name="author" content="Michael Kohler">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+  
+    #dropzone {
+      margin-top: 0.5em;
+      background-color: #304a6a;
+      min-height: 400px;
+      color: #fff;
+      display: flex;
+      font-size: 2em;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #fileinfo {
+      display: flex;
+      flex-direction: row;
+    }
+    
+    .fileinfo-item {
+      color: #fff;
+      background-color: #596e87;
+      padding: 10px 10px 10px 10px;
+      margin-right: 10px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div id="dropzone" ondrop="cancelEvent(event); handleDrop(event);" ondragenter="cancelEvent(event);" ondragover="cancelEvent(event);">
+    Drag your file here!
+  </div>
+  
+  <div>
+    <h1>File Information</h1>
+    <div id="fileinfo">
+    </div>
+  </div>
+  
+  <script>
+  
+    function cancelEvent(event) {
+      event.stopPropagation();
+      event.preventDefault();
+    }
+    
+    function handleDrop(event) {  
+      showFileInfo(event.dataTransfer.files);
+    }
+    
+    function showFileInfo(files) {
+      for(var i = 0; i < files.length; i++) {
+        var newFileInfoBox = document.createElement('div');
+        newFileInfoBox.classList.add('fileinfo-item');
+        
+        var filename = document.createElement('h1');
+        filename.textContent = files[i].name;
+        newFileInfoBox.appendChild(filename);
+        
+        var filecontent = document.createElement('p');
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          filecontent.textContent = e.target.result;
+          newFileInfoBox.appendChild(filecontent);
+          document.querySelector('#fileinfo').appendChild(newFileInfoBox);
+        };
+        reader.readAsText(files[i]);
+      }
+    }
+    
+  </script>
+
+</body>
+</html>
